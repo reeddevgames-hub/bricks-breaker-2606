@@ -86,7 +86,12 @@ void Game::Render() const
 	ball.Draw();
 
 	// TODO #3 - Update render to render all bricks
-	brick.Draw();
+
+	// int i starts at 0, as long as i less than bricks vector size, 
+	// increase i, then draw the brick that is at the index of i
+	for (int i = 0; i < bricks.size(); i++) {
+		bricks[i].Draw();
+	}
 
 	Console::Lock(false);
 }
