@@ -20,12 +20,29 @@ void Game::Reset()
 	ResetBall();
 
 	// TODO #2 - Add this brick and 4 more bricks to the vector
-	brick.width = 10;
-	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 5;
-	brick.doubleThick = true;
-	brick.color = ConsoleColor::DarkGreen;
+	//brick.width = 10;
+	//brick.height = 2;
+	//brick.x_position = 0;
+	//brick.y_position = 5;
+	//brick.doubleThick = true;
+	//brick.color = ConsoleColor::DarkGreen;
+
+
+	// int value of i starts at 0, if it is less than or equal to 4, 
+	// increase by one increment, then repeat till done.
+	for (int i = 0; i <= 4; i++) {
+		Box tempbrick;
+		tempbrick.width = 10;
+		tempbrick.height = 2;
+		// Set the x position to the int value of i and multiply it by 12 allowing the 10 spaces needed,
+		// then adding an extra 2 spaces for spacing between bricks 
+		tempbrick.x_position = i * 12;
+		tempbrick.y_position = 5;
+		tempbrick.doubleThick = true;
+		tempbrick.color = ConsoleColor::DarkGreen;
+
+		bricks.push_back(tempbrick);
+	}
 }
 
 void Game::ResetBall()
